@@ -2,6 +2,17 @@
 <html>
 <head>
     <title>Learn D3 in 5 minutes</title>
+   <style> 
+    #test{
+        color:red;
+    }
+
+
+    .test{
+        color:green
+    }
+</style>
+
 </head>
 
 
@@ -11,6 +22,26 @@
 
 <h3>Today is a beautiful dayaaaa!!</h3>
 
+
+<div>
+    <p>Linkin park</p>
+    <p>Jay Z</p>
+    <p>Tupac</p>
+
+</div>
+
+<div id="div2">
+
+    <p>D3</label><input type="checkbox" />
+
+</div>
+
+<div id="div4Style">
+  <h2>yahoyaho</h2>
+  <p>Style Change</p>
+
+
+</div>
 
 
 
@@ -22,14 +53,36 @@
 
 <p id="demo"></p>
 <script src='https://d3js.org/d3.v4.min.js'></script>
+
+
+<!-- d3 append, insert test, remove, innerHTML test -->
+
+<script>d3.select("div").append("p").text("illest collaboration");</script>
+
+<script>d3.select("div").insert("p").text("illest collaboration inserted");</script>
+
+
+<script>d3.select("div").select("p").remove()</script>
+
+<script>d3.select("div").select("p").html("<span>This a whole new world.</span>");</script>
+
+
+<!-- d3 select/apply attr, property -->
+<script>d3.select("div").select("p").attr("id","test");</script>
+<script>d3.select("#div2").select("input").property("checked",true);</script>
+<!-- d3 text test -->
+
 <script>
 d3.select("p").text("Second Paragrah"); d3.select("p").style("color","green");
-
 </script>
 
+
+
+<!-- d3 test set style attribute... -->
 <script>
 
-
+d3.select("#div4Style").select("p").style("color", "red"); 
+d3.select("#div4Style").select("h2").classed("test", true); 
 </script>
 
 
