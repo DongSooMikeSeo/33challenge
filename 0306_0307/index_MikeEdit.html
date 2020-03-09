@@ -29,7 +29,7 @@ var ctx = canvas.getContext("2d");
 var ctx2 =canvas2.getContext("2d");
 var radius = canvas.height / 2;
 ctx.translate(radius, radius);
-
+ 
 
     
 drawdigital();
@@ -48,10 +48,11 @@ curmilliSecond = dtObj.getMilliseconds();
 var curTimeStr = curHour + ":" + curMinute + ":" + curSecond+ " EST";   
 var curDate =dtObj.getDate();
 var curMonth =dtObj.getMonth();
+var monthConverter = ["Jan", "Feb","Mar","April","May","June", "July","Aug","Sep","Oct","Nov","Dec"]
+var monthString = monthConverter[curMonth];
 var curYear = dtObj.getFullYear();
-var curTimeStr2 = curMonth + "/" + curDate + "/" + curYear;   
+var curTimeStr2 = monthString + "/" + curDate + "/" + curYear;   
 var curDay =dtObj.getDay();
-;
 var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday"];
 
 var dayString  = weekday[curDay];
@@ -88,11 +89,13 @@ ctx2.strokeText(dayString, 105, radius*0.9+200+(rect1Height/2));
     
     
 radius = radius * 0.90
+drawDate();
+
 drawClock();
 
 // 40 milliseconds ~ 25 frames per second, which is close to what a motion picture should have.
 setInterval(drawClock, 40);
-
+setInterval(drawDate, 40);    
 /* function drawClock() {
   ctx.arc(0, 0, radius, 0 , 2 * Math.PI);
   ctx.fillStyle = "white";
@@ -114,6 +117,8 @@ function drawFace(ctx, radius) {
   ctx.arc(0, 0, radius, 0, 2 * Math.PI);
   ctx.fillStyle = '#000';
   ctx.fill();
+
+
 
   grad = ctx.createRadialGradient(0, 0 ,radius * 0.98, 0, 0, radius * 1.02);
   grad.addColorStop(0, '#444');
@@ -208,7 +213,31 @@ function drawHand(ctx, pos, length, width) {
   ctx.lineTo(0, -length);
   ctx.stroke();
   ctx.rotate(-pos);
+
 }
+
+    
+    function drawDate() {
+   var now2 = new Date();
+  var day2 = now2.getDay(); 
+  var dayconverter2 = ["Sun", "Mon", "Tue", "Wed","Thur", "Fri", "Sat"]   
+  var realday = dayconverter2[day2];
+  ctx.font = "40px Marvel";
+  ctx.fillStyle ="#fff";
+  ctx.fillText(realday, 0, radius*0.5);
+
+  var curDate2 =now2.getDate();
+  var curMonth2 =now2.getMonth();
+  var monthConverter2 = ["Jan", "Feb","Mar","April","May","June", "July","Aug","Sep","Oct","Nov","Dec"]
+  var monthString2 = monthConverter2[curMonth2];
+  var curYear2 = now2.getFullYear(); 
+  var curTimeStr2 = monthString2 + "/" + curDate2 + "/" + curYear2;   
+  ctx.fillText(curTimeStr2, 0, -radius*0.5);
+
+
+ }
+
+
 
 </script>
 
