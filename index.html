@@ -9,9 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-     <!--Fontawesome globe icon-->
+    <!--Fontawesome globe icon-->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    
+
     <title>Dong Soo Mike Seo</title>
     <style>
         header a {
@@ -22,6 +22,10 @@
         header a:hover {
             text-decoration: none;
             color: hotpink;
+        }
+        
+        .carouselContainer{
+            padding: 50px;
         }
 
     </style>
@@ -43,7 +47,7 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-white">About</h4>
-                        <p style="color: white"> I am an <b data-toggle="tooltip" data-placement ="top" title="Nobody can actually define what Ubarnist is tho..느낌적인 느낌" style="color: hotpink">urbanist,</b> with a background in Urban Planning, Real Estate Finance, Jounalism, and Geography. I am producing a series of interactive online visualizations, especiall web-maps. This is my <b data-toggle="tooltip" data-placement ="bottom" title="but not much to show off yet..one day.."  style="color: hotpink">portfolio</b> website. It is mobile friendly and all. </p>
+                        <p style="color: white"> I am an <b data-toggle="tooltip" data-placement="top" title="Nobody can actually define what Ubarnist is tho..느낌적인 느낌" style="color: hotpink">urbanist,</b> with a background in Urban Planning, Real Estate Finance, Jounalism, and Geography. I am producing a series of interactive online visualizations, especiall web-maps. This is my <b data-toggle="tooltip" data-placement="bottom" title="but not much to show off yet..one day.." style="color: hotpink">portfolio</b> website. It is mobile friendly and all. </p>
                     </div>
 
                     <div class="col-sm-4 offset-md-1 py-4">
@@ -53,27 +57,27 @@
                             <li><a href="33challenge.html">Portfolio: 33 Challenge</a></li>
                             <li><a href="contact.html">Contact</a></li>
 
-                  
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-     <div class="navbar navbar-dark bg-dark shadow-sm"> 
-      <div class="container d-flex justify-content-between">
-         <a href="index.html" class="navbar-brand d-flex align-items-center">
-         
-            <i class='fas fa-globe mr-2' style='font-size:32px', margin right ='100px'></i>
-            <strong>&nbsp;Dong Soo Mike Seo</strong>
-          </a>    
-         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-     </div>           
-        
-    </div>
-     
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+
+                    <i class='fas fa-globe mr-2' style='font-size:32px' , margin right='100px'></i>
+                    <strong>&nbsp;Dong Soo Mike Seo</strong>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+        </div>
+
 
 
 
@@ -82,9 +86,35 @@
 
 
     </header>
-
-
-
+    
+    <div class="carouselContainer">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block rounded mx-auto w-20" src="assets/python.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block rounded mx-auto w-20" src="assets/arcGIS.png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block rounded mx-auto w-20" src="assets/d3JS.jpg" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
     <p>
         As of today, 03/03/2020, I am starting this challenge, "33 challenge," until 06/06/2020. I tweaked the “a commit a day” challenge. I will do 3 commits in three days, instead. The difference is, those three commits can be done in any days among three days, not necessarily one per day. Each commit will cover different parts of my workflow, which starts with PostgreSQL or MS SQL Server to extract/load/transform the raw data, then explores data with D3.JS by producing descriptive statistics, and finally generates web map using Leaflet or Openlayer. So there will be one commit for SQL code, one commit for D3.JS, and one commit for Leaflet or other frontend format.
 
